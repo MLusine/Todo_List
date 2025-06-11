@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./styles.css";
 
 const TodoItem = ({ todos, setTodos }) => {
   const [data, setData] = useState("");
@@ -23,19 +24,35 @@ const TodoItem = ({ todos, setTodos }) => {
     setData(todos[index]);
   };
   return (
-    <div>
-      <h2>Todos</h2>
-      <input value={data} onChange={(e) => setData(e.target.value)} />
-      <button onClick={handleAdd}>
-        {editIndex != null ? "Update" : "Add"}
-      </button>
-      <ol>
+    <div className="wrapper">
+      <h1>Todos</h1>
+      <div>
+        <input
+          value={data}
+          onChange={(e) => setData(e.target.value)}
+          className="todo-input"
+        />
+        <button onClick={handleAdd} className="add-button">
+          {editIndex != null ? "Update" : "Add"}
+        </button>
+      </div>
+      <ol className="todo-list">
         {todos.map((todo, ind) => (
           <li key={ind}>
-            {todo}
-
-            <button onClick={() => handleDelete(ind)}>Delete</button>
-            <button onClick={() => handleEdit(ind)}>Edit</button>
+            <div className="todo-content">
+              {todo}
+              <div className="actions">
+                <button onClick={() => handleEdit(ind)} className="edit-btn">
+                  Edit
+                </button>
+                <button
+                  onClick={() => handleDelete(ind)}
+                  className="delete-btn"
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
           </li>
         ))}
       </ol>

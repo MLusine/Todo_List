@@ -1,0 +1,50 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.todo-input {
+  width: 300px;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.add-button {
+  padding: 8px 25px;
+  border-radius: 5px;
+  margin-left: 20px;
+  background: #f72ab3;
+  border: 1px solid #f72ab3;
+  color: #fff;
+}
+
+.todo-list {
+  width: 400px;
+  padding: 8px;
+}
+
+.todo-content {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.actions {
+  display: flex;
+  gap: 10px;
+}
+.actions button {
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+}
+.delete-btn {
+  background: #ff0000;
+  border: 1px solid #ff0000;
+}
+.edit-btn {
+  background: #008000;
+  border: 1px solid #008000;
+}
